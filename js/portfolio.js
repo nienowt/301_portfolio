@@ -12,17 +12,19 @@ function Project (a) {
 
 Project.prototype.toHtml = function() {
   var $newProject = $('article.template').clone();
+  $newProject.removeClass('template');
 
   $newProject.find('h2').text(this.title);
   $newProject.find('time').text(this.date);
   $newProject.data('category', this.category);
   $newProject.find('address > a').attr('href', this.projectUrl);
   $newProject.find('address > a').text(this.client);
-  $newProject.find('.description').html(this.discription);
+  $newProject.find('.description').html(this.description);
   $newProject.append('<hr>');
-  console.log('okay');
 
-  $newProject.removeClass('template');
+
+  $('article.template').hide();
+
   return $newProject;
 };
 

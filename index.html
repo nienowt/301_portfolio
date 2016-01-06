@@ -4,6 +4,7 @@
   <head>
     <meta charset="utf-8">
     <title></title>
+    <link rel="stylesheet" href="style/reset.css">
     <link rel="stylesheet" href="style/portfolio.css">
   </head>
   <body>
@@ -16,11 +17,32 @@
             <li><a href="https://github.com">GitHub</a></li>
           </ul>
       </header>
+      <nav>
+        <ul>
+          <li class="tab"><a href="">About</a></li>
+          <li><a href="">Home</a></li>
+        </ul>
+      </nav>
       <section id="projects">
         <h3>Projects</h3>
-        <article class="template, box">
-
+        <article class="template" data-category="cat">
+          <header>
+            <h2>Title</h2>
+            <div class="byline">
+              For: <address><a href="">client</a></address>
+              <time datetime="01-2000">Date</time>
+              <section class="description"></section>
+            </div>
+          </header>
         </article>
+      </section>
+      <section id="about" class="tab-content">
+        <section>
+          <h1>About</h1>
+        <p>
+          Experience etc.
+        </p>
+        </section>
       </section>
     </main>
     <footer>

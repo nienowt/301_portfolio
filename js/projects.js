@@ -1,8 +1,10 @@
 var projectData = [
   {
     title: 'ipsum',
-    date: 'oct 5, 1996',
+    date: '09-1996',
+    category: 'skilled',
     projectUrl: 'https://www.google.com/',
-    client: 'google'
+    client: 'google',
+    description: '<p>I created google, in its entirety, alone</p>',
   }
 ];

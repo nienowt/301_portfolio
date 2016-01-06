@@ -1,0 +1,22 @@
+img {
+  max-width: 50%;
+}
+
+li {
+list-style: none;
+}
+
+main {
+  max-width: 80%;
+  margin-left:10%;
+}
+
+body {
+background-color: #ACD9E2;
+}
+
+nav {
+  border-bottom: solid black 1px;
+  border-top: solid black 2px;
+  max-width: 100%;
+}

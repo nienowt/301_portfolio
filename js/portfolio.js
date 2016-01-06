@@ -7,12 +7,13 @@ function Project (a) {
   this.projectUrl = a.projectUrl;
   this.client = a.client;
   this.category = a.category;
+  this.img = a.img;
   this.description = a.description;
 };
 
 Project.prototype.toHtml = function() {
   var $newProject = $('article.template').clone();
-  $newProject.removeClass('template');
+
 
   $newProject.find('h2').text(this.title);
   $newProject.find('time').text(this.date);
@@ -20,10 +21,11 @@ Project.prototype.toHtml = function() {
   $newProject.find('address > a').attr('href', this.projectUrl);
   $newProject.find('address > a').text(this.client);
   $newProject.find('.description').html(this.description);
+  $newProject.find('.projectImg').attr('src',this.img);
   $newProject.append('<hr>');
 
+  $newProject.removeClass('template');
 
-  $('article.template').hide();
 
   return $newProject;
 };

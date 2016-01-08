@@ -1,11 +1,16 @@
 var projectView = {};
 
 projectView.populateFilters = function() {
-  $('articles').each(function(){
+  $('article').each(function(){
     if (!$(this).hasClass('template')) {
-      var val = $(this).attr('data-category');
+      var val = $(this).find('time').text();
       var optionTag = '<option value="'+ val +'">' + val + '</option>';
-      $('#projectCategory').append(optionTag);
+      $('#projectYear').append(optionTag);
+      val = $(this).attr('data-category');
+      optionTag = '<option value="'+ val +'">' + val + '</option>';
+      if ($('#projectCategory option[value="' + val + '"]').length === 0) {
+        $('#projectCategory').append(optionTag);
+      }
     }
   });
 };
@@ -20,7 +25,29 @@ projectView.handleMainNav = function() {
   });
 };
 
-$(document).ready( function() {
+projectView.handleCatFilter = function () {
+  $('#projectCategory').on('change', function(){
+    if ($(this).val()) {
+      $('article').hide();
+      var category = this.value;
+      $('article').filter('[data-category = "'+category+'"]').show();
+    }
+  });
+};
+
+projectView.handleDateFilter = function () {
+  $('#projectYear').on('change', function(){
+    if ($(this).val()) {
+      $('article').hide();
+      var year = this.value;
+      $('article').filter('[data-year = "'+year+'"]').show();
+    }
+  });
+};
+
+$(document).ready(function() {
+  projectView.handleDateFilter();
+  projectView.handleCatFilter();
   projectView.populateFilters();
   projectView.handleMainNav();
 });

@@ -17,7 +17,8 @@ Project.prototype.toHtml = function() {
 
   $newProject.find('h2').text(this.title);
   $newProject.find('time').text(this.date);
-  $newProject.data('category', this.category);
+  $newProject.attr('data-category', this.category);
+  $newProject.attr('data-year',this.date)
   $newProject.find('address > a').attr('href', this.projectUrl);
   $newProject.find('address > a').text(this.client);
   $newProject.find('.description').html(this.description);

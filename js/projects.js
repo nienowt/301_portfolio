@@ -15,6 +15,15 @@ var projectData = [
     projectUrl: 'https://www.watches.com',
     client: 'bill',
     img: 'http://ilikehotmail.com/wp-content/uploads/2015/12/Microsoft-Hotmail-Logo1.jpg',
-    description: '<p>I created google, in its entirety, alone</p>',
+    description: '<p>I hotmail, in its entirety, alone</p>',
+  },
+  {
+    title: 'ipsumption',
+    date: '1998',
+    category: 'skill',
+    projectUrl: 'https://www.facebook.com',
+    client: 'marc',
+    img: 'http://cdn.ghacks.net/wp-content/uploads/2009/10/facebook_login.jpg',
+    description: '<p>I created facebook, in its entirety, alone</p>',
   }
 ];

@@ -1,7 +1,7 @@
 var projectData = [
   {
     title: 'ipsum',
-    date: '09-1996',
+    date: '1996',
     category: 'skilled',
     projectUrl: 'https://www.google.com/',
     client: 'google',
@@ -10,7 +10,7 @@ var projectData = [
   },
   {
     title: 'ipsumpt',
-    date: '09-1998',
+    date: '1998',
     category: 'skill',
     projectUrl: 'https://www.watches.com',
     client: 'bill',

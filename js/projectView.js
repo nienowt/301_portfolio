@@ -31,7 +31,10 @@ projectView.handleCatFilter = function () {
       $('article').hide();
       var category = this.value;
       $('article').filter('[data-category = "'+category+'"]').show();
+    } else {
+      $('article').not('template').show();
     }
+    $('#projectYear').val('');
   });
 };
 
@@ -41,7 +44,10 @@ projectView.handleDateFilter = function () {
       $('article').hide();
       var year = this.value;
       $('article').filter('[data-year = "'+year+'"]').show();
+    } else {
+      $('article').not('template').show();
     }
+    $('#projectCategory').val('');
   });
 };
 

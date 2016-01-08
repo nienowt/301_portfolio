@@ -12,23 +12,11 @@ function Project (a) {
 };
 
 Project.prototype.toHtml = function() {
-  var $newProject = $('article.template').clone();
-
-
-  $newProject.find('h2').text(this.title);
-  $newProject.find('time').text(this.date);
-  $newProject.attr('data-category', this.category);
-  $newProject.attr('data-year',this.date)
-  $newProject.find('address > a').attr('href', this.projectUrl);
-  $newProject.find('address > a').text(this.client);
-  $newProject.find('.description').html(this.description);
-  $newProject.find('.projectImg').attr('src',this.img);
-  $newProject.append('<hr>');
-
-  $newProject.removeClass('template');
-
-
-  return $newProject;
+  var appTemplate = $('#projectTemplate').html();
+  var compiledTemplate = Handlebars.compile(appTemplate);
+  var dataSource = this;
+  var html = compiledTemplate(dataSource);
+  return html;
 };
 
 projectData.forEach(function(ele) {
@@ -37,6 +25,6 @@ projectData.forEach(function(ele) {
 });
 
 projects.forEach(function(a){
-  $('#projects').append(a.toHtml());
+  $('#projectArea').append(a.toHtml());
   console.log('why not');
 });

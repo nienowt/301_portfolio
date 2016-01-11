@@ -6,11 +6,10 @@
     <title></title>
     <link rel="stylesheet" href="style/fonts/icons.css">
     <link rel="stylesheet" href="style/base.css">
-    <link rel="stylesheet" href="style/modules.css">
     <link rel="stylesheet" href="style/layout.css">
+    <link rel="stylesheet" href="style/modules.css">
     <link rel="stylesheet" href="style/reset.css">
     <script id="projectTemplate" type="text/x-handlebars-template">
-
       <article data-category="{{category}}" data-year="{{date}}">
         <header>
           <h2>{{Title}}</h2>
@@ -22,14 +21,12 @@
         <img class ="projectImg" src="{{img}}">
         <section class="description">{{{description}}}</section>
       </article>
-
     </script>
   </head>
   <body>
     <main>
-      <header>
+      <header class="main-header">
         <h1>Thom Nienow</h1>
-      </header>
       <nav class="menu">
         <img class="hamburger" src="style/images/menu.png">
         <ul>
@@ -39,6 +36,7 @@
           <li class="tab icon-menu" data-content="contact"><a href="">Contact</a></li>
         </ul>
       </nav>
+    </header>
       <section id="projects" class="tab-content">
         <div>
           <ul id="filters">

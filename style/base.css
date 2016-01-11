@@ -1,5 +1,7 @@
 img {
-  max-width: 50%;
+  max-width: 60%;
+  display:inline;
+  margin-left:3%;
 }
 
 li {
@@ -7,23 +9,28 @@ list-style: none;
 }
 
 main {
-  max-width: 80%;
-  margin-left:10%;
+  max-width: 100%;
 }
 
 header {
   min-width: 290px;
+  width:100%;
   float:left;
 }
 
 body {
-background-color: #ACD9E2;
+  background-color: white;
 }
 
 nav {
-  max-width: 100%;
+  width: 100%;
 }
 
 a {
   text-decoration: none;
+}
+
+article {
+  background-color: #DFFAFF;
+  border-radius: 5px;
 }

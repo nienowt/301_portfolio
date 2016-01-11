@@ -1,0 +1,36 @@
+img {
+  max-width: 60%;
+  display:inline;
+  margin-left:3%;
+}
+
+li {
+list-style: none;
+}
+
+main {
+  max-width: 100%;
+}
+
+header {
+  min-width: 290px;
+  width:100%;
+  float:left;
+}
+
+body {
+  background-color: white;
+}
+
+nav {
+  width: 100%;
+}
+
+a {
+  text-decoration: none;
+}
+
+article {
+  background-color: #DFFAFF;
+  border-radius: 5px;
+}

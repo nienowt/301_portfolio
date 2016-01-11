@@ -1,5 +1,5 @@
 var projects = [];
-var projectView = {};
+
 
 function Project (a) {
   this.title = a.title;
@@ -7,25 +7,16 @@ function Project (a) {
   this.projectUrl = a.projectUrl;
   this.client = a.client;
   this.category = a.category;
+  this.img = a.img;
   this.description = a.description;
 };
 
 Project.prototype.toHtml = function() {
-  var $newProject = $('article.template').clone();
-  $newProject.removeClass('template');
-
-  $newProject.find('h2').text(this.title);
-  $newProject.find('time').text(this.date);
-  $newProject.data('category', this.category);
-  $newProject.find('address > a').attr('href', this.projectUrl);
-  $newProject.find('address > a').text(this.client);
-  $newProject.find('.description').html(this.description);
-  $newProject.append('<hr>');
-
-
-  $('article.template').hide();
-
-  return $newProject;
+  var appTemplate = $('#projectTemplate').html();
+  var compiledTemplate = Handlebars.compile(appTemplate);
+  var dataSource = this;
+  var html = compiledTemplate(dataSource);
+  return html;
 };
 
 projectData.forEach(function(ele) {
@@ -34,20 +25,6 @@ projectData.forEach(function(ele) {
 });
 
 projects.forEach(function(a){
-  $('#projects').append(a.toHtml());
+  $('#projectArea').append(a.toHtml());
   console.log('why not');
-});
-
-projectView.handleMainNav = function() {
-  $('.tab').on('click', function(event){
-    event.preventDefault();
-    $('.tab-content').hide();
-    var $content = $(this).data('content');
-    console.log($(this).data('content'));
-    $('#' + $(this).data('content')).fadeIn();
-  });
-};
-
-$(document).ready( function() {
-  projectView.handleMainNav();
 });

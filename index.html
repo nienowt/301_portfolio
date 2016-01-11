@@ -1,54 +1,85 @@
-
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title></title>
+    <link rel="stylesheet" href="style/fonts/icons.css">
+    <link rel="stylesheet" href="style/base.css">
+    <link rel="stylesheet" href="style/layout.css">
+    <link rel="stylesheet" href="style/modules.css">
     <link rel="stylesheet" href="style/reset.css">
-    <link rel="stylesheet" href="style/portfolio.css">
+    <script id="projectTemplate" type="text/x-handlebars-template">
+      <article data-category="{{category}}" data-year="{{date}}">
+        <header>
+          <h2>{{Title}}</h2>
+          <div class="byline">
+            For: <address><a href="">{{client}}</a></address>
+            <time datetime="01-2000">{{date}}</time>
+          </div>
+        </header>
+        <img class ="projectImg" src="{{img}}">
+        <section class="description">{{{description}}}</section>
+      </article>
+    </script>
   </head>
   <body>
     <main>
-      <header>
+      <header class="main-header">
         <h1>Thom Nienow</h1>
-          <ul>
-            <li>Email: email@gmail.com</li>
-            <li>Phone: (555)-555-5555</li>
-            <li><a href="https://github.com">GitHub</a></li>
-          </ul>
-      </header>
-      <nav>
+      <nav class="menu">
+        <img class="hamburger" src="style/images/menu.png">
         <ul>
-          <li class="tab" data-content="about"><a href="">About</a></li>
-          <li class="tab" data-content="projects"><a href="">Home</a></li>
+          <li class="tab icon-home3" data-content="projects"><a href="">Home</a></li>
+          <li class="tab icon-profile" data-content="resume"><a href="">Resume</a></li>
+          <li class="tab icon-radio-unchecked" data-content="about"><a href="">About</a></li>
+          <li class="tab icon-menu" data-content="contact"><a href="">Contact</a></li>
         </ul>
       </nav>
+    </header>
       <section id="projects" class="tab-content">
+        <div>
+          <ul id="filters">
+            <li>
+              <select id="projectCategory">
+                <option value="">--Filter by Category--</option>
+              </select>
+            </li>
+            <li>
+              <select id="projectYear">
+                <option value="">--Filter by Date--</option>
+              </select>
+            </li>
+          </ul>
+        </div>
         <h3>Projects</h3>
-        <article class="template" data-category="cat">
-          <header>
-            <h2>Title</h2>
-            <div class="byline">
-              For: <address><a href="">client</a></address>
-              <time datetime="01-2000">Date</time>
-            </div>
-          </header>
-          <section class="description"></section>
-        </article>
+        <div id="projectArea"></div>
       </section>
-      <section id="about" class="tab-content">
+      <section id="about" class="tab-content notHome">
         <section>
           <h1>About</h1>
-        <p>
-          Experience etc.
-        </p>
+          <p>I am a leo???????
+          </p>
         </section>
+      </section>
+      <section id="resume" class="tab-content notHome">
+        <h2>Resume</h2>
+        <p>Look at all this got-dang experience</p>
+      </section>
+      <section id="contact" class="tab-content notHome">
+        <ul>
+          <li>Email: email@gmail.com</li>
+          <li>Phone: (555)-555-5555</li>
+          <li class="icon-github"><a href="https://github.com/nienowt">GitHub</a></li>
+        </ul>
       </section>
     </main>
     <footer>
     </footer>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.4/handlebars.min.js" charset="utf-8"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="js/projects.js"></script>
     <script src="js/portfolio.js"></script>
+    <script src="js/projectView.js"></script>
   </body>
 </html>

@@ -1,4 +1,3 @@
-var projects = [];
 
 
 function Project (a) {
@@ -11,6 +10,8 @@ function Project (a) {
   this.description = a.description;
 };
 
+Project.all = [];
+
 Project.prototype.toHtml = function() {
   var appTemplate = $('#projectTemplate').html();
   var compiledTemplate = Handlebars.compile(appTemplate);
@@ -19,12 +20,26 @@ Project.prototype.toHtml = function() {
   return html;
 };
 
-projectData.forEach(function(ele) {
-  projects.push(new Project(ele));
-  console.log('what');
-});
+Project.loadAll = function(projectData){
+  projectData.forEach(function(ele) {
+    Project.all.push(new Project(ele));
+  });
+};
 
-projects.forEach(function(a){
-  $('#projectArea').append(a.toHtml());
-  console.log('why not');
-});
+Project.fetchAll = function(){
+  if (localStorage.projectData) {
+    Project.loadAll(JSON.parse(localStorage.projectData));
+    projectView.initIndex();
+  } else {
+    $.getJSON('/data/projects.json', function(projectData){
+      console.log('working');
+      Project.loadAll(projectData);
+      localStorage.projectData = JSON.stringify(projectData);
+      projectView.initIndex();
+    });
+  }
+};
+
+// projects.forEach(function(a){
+//   $('#projectArea').append(a.toHtml());
+// });

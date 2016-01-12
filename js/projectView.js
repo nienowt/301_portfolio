@@ -51,9 +51,13 @@ projectView.handleDateFilter = function () {
   });
 };
 
-$(document).ready(function() {
+projectView.initIndex = function() {
+  Project.all.forEach(function(a) {
+    $('#projectArea').append(a.toHtml());
+  });
+
   projectView.handleDateFilter();
   projectView.handleCatFilter();
   projectView.populateFilters();
   projectView.handleMainNav();
-});
+};

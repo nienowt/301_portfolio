@@ -25,5 +25,41 @@
     "client": "marc",
     "img": "http://cdn.ghacks.net/wp-content/uploads/2009/10/facebook_login.jpg",
     "description": "<p>I created facebook, in its entirety, alone</p>"
+  },
+  {
+    "title": "ipsumptionous",
+    "date": "1996",
+    "category": "skill",
+    "projectUrl": "https://www.thesun.com",
+    "client": "pete",
+    "img": "http://i.space.com/images/i/000/005/972/original/sun-photo-solar-filament-101118-02.jpg?1294094311",
+    "description": "<p>I created the sun</p>"
+  },
+  {
+    "title": "ipsumptionous",
+    "date": "1997",
+    "category": "skill",
+    "projectUrl": "https://www.thestars.com",
+    "client": "pete",
+    "img": "http://28oa9i1t08037ue3m1l0i861.wpengine.netdna-cdn.com/wp-content/uploads/2014/05/Stars-fixed.jpg",
+    "description": "<p>I created some other stars as well</p>"
+  },
+  {
+    "title": "ipsumptionous",
+    "date": "1997",
+    "category": "skill",
+    "projectUrl": "https://www.theearth.com",
+    "client": "mac",
+    "img": "http://solarviews.com/raw/earth/earthafr.jpg",
+    "description": "<p> I created the Earth</p>"
+  },
+  {
+    "title": "ipsumptionous",
+    "date": "1999",
+    "category": "skill",
+    "projectUrl": "https://www.lamp.com",
+    "client": "mac",
+    "img": "https://img1.etsystatic.com/007/0/6908117/il_fullxfull.381002689_8zq7.jpg",
+    "description": "<p> I made this lamp </p>"
   }
 ]

@@ -1,63 +1,83 @@
-var projectView = {};
+(function(module){
+  var projectView = {};
 
-projectView.populateFilters = function() {
-  $('article').each(function(){
-    if (!$(this).hasClass('template')) {
-      var val = $(this).find('time').text();
-      var optionTag = '<option value="'+ val +'">' + val + '</option>';
-      $('#projectYear').append(optionTag);
-      val = $(this).attr('data-category');
-      optionTag = '<option value="'+ val +'">' + val + '</option>';
-      if ($('#projectCategory option[value="' + val + '"]').length === 0) {
-        $('#projectCategory').append(optionTag);
+  projectView.populateFilters = function() {
+    $('article').map(function(){
+      if (!$(this).hasClass('template')) {
+        var val = $(this).attr('data-year');
+        var optionTag = '<option value="'+ val +'">' + val + '</option>';
+        $('#projectYear').append(optionTag);
+        val = $(this).attr('data-category');
+        optionTag = '<option value="'+ val +'">' + val + '</option>';
+        if ($('#projectCategory option[value="' + val + '"]').length === 0) {
+          $('#projectCategory').append(optionTag);
+        }
       }
-    }
-  });
-};
+    });
+  };
 
-projectView.handleMainNav = function() {
-  $('.tab').on('click', function(event){
-    event.preventDefault();
-    $('.tab-content').hide();
-    var $content = $(this).data('content');
-    console.log($(this).data('content'));
-    $('#' + $(this).data('content')).fadeIn();
-  });
-};
+  projectView.handleMainNav = function() {
+    $('.tab').on('click', function(event){
+      event.preventDefault();
+      $('.tab-content').hide();
+      var $content = $(this).data('content');
+      console.log($(this).data('content'));
+      $('#' + $(this).data('content')).fadeIn();
+    });
+  };
 
-projectView.handleCatFilter = function () {
-  $('#projectCategory').on('change', function(){
-    if ($(this).val()) {
-      $('article').hide();
-      var category = this.value;
-      $('article').filter('[data-category = "'+category+'"]').show();
-    } else {
-      $('article').not('template').show();
-    }
-    $('#projectYear').val('');
-  });
-};
+  projectView.handleCatFilter = function () {
+    $('#projectCategory').on('change', function(){
+      if ($(this).val()) {
+        $('article').hide();
+        var category = this.value;
+        $('article').filter('[data-category = "'+category+'"]').show();
+      } else {
+        $('article').not('template').show();
+      }
+      $('#projectYear').val('');
+    });
+  };
 
-projectView.handleDateFilter = function () {
-  $('#projectYear').on('change', function(){
-    if ($(this).val()) {
-      $('article').hide();
-      var year = this.value;
-      $('article').filter('[data-year = "'+year+'"]').show();
-    } else {
-      $('article').not('template').show();
-    }
-    $('#projectCategory').val('');
-  });
-};
+  projectView.handleDateFilter = function () {
+    $('#projectYear').on('change', function(){
+      if ($(this).val()) {
+        $('article').hide();
+        var year = this.value;
+        $('article').filter('[data-year = "'+year+'"]').show();
+      } else {
+        $('article').not('template').show();
+      }
+      $('#projectCategory').val('');
+    });
+  };
 
-projectView.initIndex = function() {
-  Project.all.forEach(function(a) {
-    $('#projectArea').append(a.toHtml());
-  });
+  projectView.initIndex = function() {
+    Project.all.forEach(function(a) {
+      $('#projectArea').append(a.toHtml());
+    });
 
-  projectView.handleDateFilter();
-  projectView.handleCatFilter();
-  projectView.populateFilters();
-  projectView.handleMainNav();
-};
+    projectView.handleDateFilter();
+    projectView.handleCatFilter();
+    projectView.populateFilters();
+    projectView.handleMainNav();
+    projectView.initClientFacts();
+  };
+
+  projectView.initClientFacts = function() {
+    // var temp = Handlebars.compile($('#client-template').text());
+    var template = $('#client-template').html();
+    var compiledTemplate = Handlebars.compile(template);
+    var data = Project.sortClients();
+    var html = compiledTemplate(data);
+    console.log(html);
+  // DONE: We use `forEach` here because we are relying on the side-effects of the callback function:
+  // appending to the DOM.
+  // The callback is not required to return anything.
+    // Project.sortClients().forEach(function(client) {
+    //   $('#facts-area').append(template(client));
+    // });
+  };
+
+  module.projectView = projectView;
+})(window);

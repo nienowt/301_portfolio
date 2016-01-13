@@ -22,6 +22,9 @@
         <section class="description">{{{description}}}</section>
       </article>
     </script>
+    <script id="client-template" type="text/x-handlebars-template">
+      <li><strong>{{names}}</strong></li>
+   </script>
   </head>
   <body>
     <main>
@@ -75,13 +78,17 @@
       </section>
     </main>
     <footer>
+      <div id="facts-area">
+        <h3>Clients:</h3>
+        <ul class = "clientStats"></ul>
+      </div>
     </footer>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.4/handlebars.min.js" charset="utf-8"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="js/portfolio.js"></script>
     <script src="js/projectView.js"></script>
     <script>
-      Project.fetchAll();
+      Project.fetchAll(projectView.initIndex);
     </script>
   </body>
 </html>

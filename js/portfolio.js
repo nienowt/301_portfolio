@@ -46,10 +46,17 @@
     }).reduce(function(names, name){
       if(names.indexOf(name) === -1){
         names.push(name);
-        console.log(names);
       }
       return names;
     },[]);
+  };
+
+  Project.assignKey = function(){
+    return Project.sortClients().map(function(name){
+      return {
+        client : name
+      };
+    });
   };
 
   // Project.initClient = function(){

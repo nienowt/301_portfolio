@@ -23,7 +23,7 @@
       </article>
     </script>
     <script id="client-template" type="text/x-handlebars-template">
-      <li><strong>{{names}}</strong></li>
+      <li><strong>{{client}}</strong></li>
    </script>
   </head>
   <body>
@@ -68,6 +68,10 @@
       <section id="resume" class="tab-content notHome">
         <h2>Resume</h2>
         <p>Look at all this got-dang experience</p>
+        <div id="facts-area">
+          <h3>Clients:</h3>
+          <ul class = "clientStats"></ul>
+        </div>
       </section>
       <section id="contact" class="tab-content notHome">
         <ul>
@@ -78,10 +82,6 @@
       </section>
     </main>
     <footer>
-      <div id="facts-area">
-        <h3>Clients:</h3>
-        <ul class = "clientStats"></ul>
-      </div>
     </footer>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.4/handlebars.min.js" charset="utf-8"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>

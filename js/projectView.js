@@ -6,7 +6,9 @@
       if (!$(this).hasClass('template')) {
         var val = $(this).attr('data-year');
         var optionTag = '<option value="'+ val +'">' + val + '</option>';
-        $('#projectYear').append(optionTag);
+        if ($('#projectYear option[value="' + val + '"]').length === 0) {
+          $('#projectYear').append(optionTag);
+        }
         val = $(this).attr('data-category');
         optionTag = '<option value="'+ val +'">' + val + '</option>';
         if ($('#projectCategory option[value="' + val + '"]').length === 0) {
@@ -65,18 +67,11 @@
   };
 
   projectView.initClientFacts = function() {
-    // var temp = Handlebars.compile($('#client-template').text());
-    var template = $('#client-template').html();
-    var compiledTemplate = Handlebars.compile(template);
-    var data = Project.sortClients();
-    var html = compiledTemplate(data);
-    console.log(html);
-  // DONE: We use `forEach` here because we are relying on the side-effects of the callback function:
-  // appending to the DOM.
-  // The callback is not required to return anything.
-    // Project.sortClients().forEach(function(client) {
-    //   $('#facts-area').append(template(client));
-    // });
+    var template = Handlebars.compile($('#client-template').text());
+    Project.assignKey().forEach(function(a) {
+      $('#facts-area').append(template(a));
+      console.log(a);
+    });
   };
 
   module.projectView = projectView;

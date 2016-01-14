@@ -26,17 +26,31 @@
     });
   };
 
+  Project.getAll = function(){
+    $.getJSON('/data/projects.json', function(projectData){
+      Project.loadAll(projectData);
+      localStorage.projectData = JSON.stringify(projectData);
+    });
+  };
 
   Project.fetchAll = function(a){
-    if (localStorage.projectData) {
-      Project.loadAll(JSON.parse(localStorage.projectData));
-      a();
-    } else {
-      $.getJSON('/data/projects.json', function(projectData){
-        Project.loadAll(projectData);
-        localStorage.projectData = JSON.stringify(projectData);
-        a();
+    if(localStorage.rawData){
+      $.ajax({
+        type: 'HEAD',
+        url: '/data/projects.json',
+        success: function(data,message,xhr){
+          var eTag = xhr.getResponseHeader('eTag');
+          if (!localStorage.eTag || localStorage.eTag != eTag){
+            localStorage.eTag = eTag;
+            Project.getAll();
+          } else {
+            Project.loadAll(JSON.parse(localStorage.projectData));
+            a();
+          }
+        }
       });
+    } else {
+      project.getAll();
     }
   };
 
@@ -58,14 +72,6 @@
       };
     });
   };
-
-  // Project.initClient = function(){
-  //   var template = $('#client-template').html();
-  //   var compiledTemplate = Handlebars.compile(template);
-  //   var data = Project.client;
-  //   var html = template(data);
-  //   console.log(html);
-  // };
 
   module.Project = Project;
 })(window);

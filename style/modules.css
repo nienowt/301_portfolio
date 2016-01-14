@@ -23,11 +23,10 @@
 }
 
 .main-header {
-  background-color: #67B7FF;
+  background-color: #E7E7E7;
   padding-top:30px;
   margin-top:-20px;
-  border-bottom-left-radius: 5px;
-  border-bottom-right-radius: 5px;
+  border-bottom:solid #BABABA 1px;
 }
 
 .hamburger {
@@ -39,7 +38,7 @@
 .menu {
   padding: .1%;
   border-bottom:none;
-  background-color: #67B7FF;
+  background-color: #E7E7E7;
 }
 
 .menu ul {
@@ -59,17 +58,18 @@
   margin-right: 5%;
   font-size: 1.5em;
   padding: 1%;
+  background-color: #F7F7F7;
 }
 .tab {
     border-radius: 5px;
     margin-top:4px;
     margin-left: 5%;
-    background-color: #DAF1F6;
+    background-color: #E7E7E7;
 }
 
 #filters select {
-  background-color: #DFFAFF;
-  border:none;
+  background-color: #E7E7E7;
+  border:solid #BABABA 1px;
   border-radius: 5px;
   width: 90%;
   margin: 2%;
@@ -98,11 +98,11 @@
     display: inline-flex;
     flex-grow:1;
     border-bottom:none;
-    background-color:#67B7FF;
+    background-color:#E7E7E7;
   }
 
-  .main-header {
-    display: inline-flex;
+  .main-header h1{
+    margin-bottom:none;
     float:none;
   }
 

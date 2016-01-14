@@ -61,5 +61,14 @@
     "client": "mac",
     "img": "https://img1.etsystatic.com/007/0/6908117/il_fullxfull.381002689_8zq7.jpg",
     "description": "<p> I made this lamp </p>"
+  },
+  {
+    "title": "ipsumptionous",
+    "date": "1999",
+    "category": "skill",
+    "projectUrl": "https://www.petco.com",
+    "client": "petco",
+    "img": "http://i.forbesimg.com/media/lists/companies/petco-animal-supplies_416x416.jpg",
+    "description": "<p> I am petco </p>"
   }
 ]

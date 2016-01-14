@@ -28,6 +28,14 @@
     });
   };
 
+  projectView.handleArticle = function () {
+    $('article').on('click', function(event){
+      event.preventDefault();
+      $(this).find('p').toggle();
+    });
+  };
+
+
   projectView.handleCatFilter = function () {
     $('#projectCategory').on('change', function(){
       if ($(this).val()) {
@@ -57,8 +65,9 @@
   projectView.initIndex = function() {
     Project.all.forEach(function(a) {
       $('#projectArea').append(a.toHtml());
+      $('article p').hide();
     });
-
+    projectView.handleArticle();
     projectView.handleDateFilter();
     projectView.handleCatFilter();
     projectView.populateFilters();

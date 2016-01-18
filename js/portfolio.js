@@ -45,12 +45,13 @@
             Project.getAll();
           } else {
             Project.loadAll(JSON.parse(localStorage.projectData));
-            a();
           }
+          a();
         }
       });
     } else {
       project.getAll();
+      a();
     }
   };
 

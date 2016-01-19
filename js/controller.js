@@ -21,6 +21,7 @@
   aboutController.index = function(){
     $('.tab-content').fadeIn();
     $('.tab-content').not($('#about')).hide();
+    repos.requestRepo(repoView.initIndex);
   };
   module.aboutController = aboutController;
 })(window);

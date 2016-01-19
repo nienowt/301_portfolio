@@ -28,6 +28,11 @@
     <script id="client-template" type="text/x-handlebars-template">
       <li><strong>{{client}}</strong></li>
    </script>
+   <script id="about-template" type="text/x-handlebars-template">
+     <li>
+       <a href="{{url}}">{{name}}</a>
+     </li>
+   </script>
   </head>
   <body>
     <main>
@@ -64,7 +69,9 @@
       </section>
       <section id="about" class="tab-content notHome">
         <section>
-          <h1>About</h1>
+          <h1>Checkout my GitHub Projects:</h1>
+          <ul>
+          </ul>
           <p>I am a leo???????</p>
         </section>
       </section>
@@ -92,6 +99,9 @@
     <script src="/js/projectView.js"></script>
     <script src="/js/page.js"></script>
     <script src="/js/controller.js"></script>
+    <script src="/js/github.js"></script>
+    <script src='/js/repo.js'></script>
+    <script src='/js/repoView.js'></script>
     <script src="/js/routes.js"></script>
   </body>
 </html>

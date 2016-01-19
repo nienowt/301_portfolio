@@ -56,6 +56,7 @@
     Project.all.forEach(function(a) {
       $('#projectArea').append(a.toHtml());
       $('article p').hide();
+      console.log('initindexran');
     });
     projectView.handleArticle();
     projectView.handleDateFilter();

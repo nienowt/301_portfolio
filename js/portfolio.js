@@ -34,7 +34,7 @@
   };
 
   Project.fetchAll = function(a){
-    if(localStorage.rawData){
+    if(localStorage.projectData){
       $.ajax({
         type: 'HEAD',
         url: '/data/projects.json',

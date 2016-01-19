@@ -50,7 +50,7 @@
         }
       });
     } else {
-      project.getAll();
+      Project.getAll();
       a();
     }
   };

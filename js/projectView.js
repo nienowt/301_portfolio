@@ -18,16 +18,6 @@
     });
   };
 
-  projectView.handleMainNav = function() {
-    $('.tab').on('click', function(event){
-      event.preventDefault();
-      $('.tab-content').hide();
-      var $content = $(this).data('content');
-      console.log($(this).data('content'));
-      $('#' + $(this).data('content')).fadeIn();
-    });
-  };
-
   projectView.handleArticle = function () {
     $('article').on('click', function(event){
       event.preventDefault();
@@ -71,7 +61,6 @@
     projectView.handleDateFilter();
     projectView.handleCatFilter();
     projectView.populateFilters();
-    projectView.handleMainNav();
     projectView.initClientFacts();
   };
 
@@ -79,7 +68,6 @@
     var template = Handlebars.compile($('#client-template').text());
     Project.assignKey().forEach(function(a) {
       $('#facts-area').append(template(a));
-      console.log(a);
     });
   };
 

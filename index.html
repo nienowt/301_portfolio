@@ -36,10 +36,10 @@
       <nav class="menu">
         <img class="hamburger" src="style/images/menu.png">
         <ul>
-          <li class="tab icon-home3" data-content="projects"><a href="">Home</a></li>
-          <li class="tab icon-profile" data-content="resume"><a href="">Resume</a></li>
-          <li class="tab icon-radio-unchecked" data-content="about"><a href="">About</a></li>
-          <li class="tab icon-menu" data-content="contact"><a href="">Contact</a></li>
+          <li class="tab icon-home3" data-content="projects"><a id="home" href="/">Home</a></li>
+          <li class="tab icon-profile" data-content="resume"><a href="/resume">Resume</a></li>
+          <li class="tab icon-radio-unchecked" data-content="about"><a href="/about">About</a></li>
+          <li class="tab icon-menu" data-content="contact"><a href="/contact">Contact</a></li>
         </ul>
       </nav>
     </header>
@@ -88,10 +88,10 @@
     </footer>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.4/handlebars.min.js" charset="utf-8"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script src="js/portfolio.js"></script>
-    <script src="js/projectView.js"></script>
-    <script>
-      Project.fetchAll(projectView.initIndex);
-    </script>
+    <script src="/js/portfolio.js"></script>
+    <script src="/js/projectView.js"></script>
+    <script src="/js/page.js"></script>
+    <script src="/js/controller.js"></script>
+    <script src="/js/routes.js"></script>
   </body>
 </html>

@@ -1,0 +1,74 @@
+[
+  {
+    "title": "ipsum",
+    "date": "1996",
+    "category": "skilled",
+    "projectUrl": "https://www.google.com/",
+    "client": "google",
+    "img": "http://kennysoto.com/wp-content/uploads/2015/11/GoogleLogo.jpg",
+    "description": "<p>I created google, in its entirety, alone</p>"
+  },
+  {
+    "title": "ipsumpt",
+    "date": "1998",
+    "category": "skill",
+    "projectUrl": "https://www.watches.com",
+    "client": "bill",
+    "img": "http://ilikehotmail.com/wp-content/uploads/2015/12/Microsoft-Hotmail-Logo1.jpg",
+    "description": "<p>I hotmail, in its entirety, alone</p>"
+  },
+  {
+    "title": "ipsumption",
+    "date": "1998",
+    "category": "skill",
+    "projectUrl": "https://www.facebook.com",
+    "client": "marc",
+    "img": "http://cdn.ghacks.net/wp-content/uploads/2009/10/facebook_login.jpg",
+    "description": "<p>I created facebook, in its entirety, alone</p>"
+  },
+  {
+    "title": "ipsumptionous",
+    "date": "1996",
+    "category": "skill",
+    "projectUrl": "https://www.thesun.com",
+    "client": "pete",
+    "img": "http://i.space.com/images/i/000/005/972/original/sun-photo-solar-filament-101118-02.jpg?1294094311",
+    "description": "<p>I created the sun</p>"
+  },
+  {
+    "title": "ipsumpmotionous",
+    "date": "1997",
+    "category": "skill",
+    "projectUrl": "https://www.thestars.com",
+    "client": "pete",
+    "img": "http://28oa9i1t08037ue3m1l0i861.wpengine.netdna-cdn.com/wp-content/uploads/2014/05/Stars-fixed.jpg",
+    "description": "<p>I created some other stars as well</p>"
+  },
+  {
+    "title": "ipsumptiononamous",
+    "date": "1997",
+    "category": "skill",
+    "projectUrl": "https://www.theearth.com",
+    "client": "mac",
+    "img": "http://solarviews.com/raw/earth/earthafr.jpg",
+    "description": "<p> I created the Earth</p>"
+  },
+  {
+    "title": "ipsumptionousle",
+    "date": "1999",
+    "category": "skill",
+    "projectUrl": "https://www.lamp.com",
+    "client": "mac",
+    "img": "https://img1.etsystatic.com/007/0/6908117/il_fullxfull.381002689_8zq7.jpg",
+    "description": "<p> I made this lamp </p>"
+  },
+  {
+    "title": "ipsumptionousing",
+    "date": "2001",
+    "category": "skill",
+    "projectUrl": "https://www.petco.com",
+    "client": "petco",
+    "img": "http://i.forbesimg.com/media/lists/companies/petco-animal-supplies_416x416.jpg",
+    "description": "<p> I am petco </p>"
+  }
+]

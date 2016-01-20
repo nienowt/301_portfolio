@@ -7,14 +7,9 @@
 
 
   repos.requestRepo = function(callback){
-    $.ajax({
-      url : 'https://api.github.com/users/nienowt/repos' + qs,
-      type: 'GET',
-      headers: {'Authorization': 'Token ' + git.getToken()},
-      success: function(data, msg, xhr){
-        repos.all = data;
-        console.log(repos.all);
-      }
+    $.get('/github/users/nienowt/repos' + qs,function(data, msg, xhr){
+      repos.all = data;
+      console.log(repos.all);
     }).done(callback);
   };
 

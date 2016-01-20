@@ -1,10 +1,7 @@
 (function(module){
   var articleController = {};
+  Project.fetchAll(projectView.initIndex);
   articleController.index = function(){
-    if ($('#projectArea').children().length === 0) {
-      Project.fetchAll(projectView.initIndex);
-      console.log('should have fetched all');
-    }
     $('.tab-content').fadeIn();
     $('.tab-content').not($('#projects')).hide();
     console.log($('#projectArea').children().length);
@@ -36,6 +33,7 @@
   };
   module.resumeController = resumeController;
 })(window);
+
 
 (function(module){
   var contactController = {};

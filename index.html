@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="style/modules.css">
     <link rel="stylesheet" href="style/reset.css">
     <script id="projectTemplate" type="text/x-handlebars-template">
-      <article id="article" data-category="{{category}}" data-year="{{date}}">
+      <article id="article" class="{{id}}" data-category="{{category}}" data-year="{{date}}">
         <header>
           <h2>{{Title}}</h2>
           <div class="byline">
@@ -20,7 +20,7 @@
         </header>
         <img class ="projectImg" src="{{img}}">
         <section class="description">
-          <a id="read-on" href="">Details</a>
+          <a id="read-on" href="/article/{{id}}">Details</a>
           {{{description}}}
         </section>
       </article>
@@ -99,7 +99,6 @@
     <script src="/js/projectView.js"></script>
     <script src="/js/page.js"></script>
     <script src="/js/controller.js"></script>
-    <script src="/js/github.js"></script>
     <script src='/js/repo.js'></script>
     <script src='/js/repoView.js'></script>
     <script src="/js/routes.js"></script>

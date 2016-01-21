@@ -1,23 +1,25 @@
 
 (function(module){
-  function Project (a) {
-    this.title = a.title;
-    this.date = a.date;
-    this.projectUrl = a.projectUrl;
-    this.client = a.client;
-    this.category = a.category;
-    this.img = a.img;
-    this.description = a.description;
-  };
+  var Project = (function(){
+    var newId = 0;
+
+    return function Project (opts) {
+      this.title = opts.title;
+      this.date = opts.date;
+      this.projectUrl = opts.projectUrl;
+      this.client = opts.client;
+      this.category = opts.category;
+      this.img = opts.img;
+      this.description = opts.description;
+      this.id = newId += 1;
+    };
+  })();
 
   Project.all = [];
 
   Project.prototype.toHtml = function() {
-    var appTemplate = $('#projectTemplate').html();
-    var compiledTemplate = Handlebars.compile(appTemplate);
-    var dataSource = this;
-    var html = compiledTemplate(dataSource);
-    return html;
+    var template = Handlebars.compile($('#projectTemplate').html());
+    return template(this);
   };
 
   Project.loadAll = function(projectData){

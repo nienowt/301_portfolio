@@ -1,10 +1,19 @@
 (function(module){
   var articleController = {};
   Project.fetchAll(projectView.initIndex);
+  
   articleController.index = function(){
+    $('article').show();
+    $('article p').hide();
     $('.tab-content').fadeIn();
     $('.tab-content').not($('#projects')).hide();
     console.log($('#projectArea').children().length);
+  };
+
+  articleController.byId = function (ctx){
+    artId = ctx.params.id;
+    $('article').not($('.' + artId)).hide();
+    $('article p').show();
   };
 
   module.articleController = articleController;

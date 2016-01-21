@@ -18,12 +18,12 @@
     });
   };
 
-  projectView.handleArticle = function () {
-    $('article').on('click', function(event){
-      event.preventDefault();
-      $(this).find('p').toggle();
-    });
-  };
+  // projectView.handleArticle = function () {
+  //   $('article').on('click', function(event){
+  //     event.preventDefault();
+  //     $(this).find('p').toggle();
+  //   });
+  // };
 
 
   projectView.handleCatFilter = function () {
@@ -56,9 +56,8 @@
     Project.all.forEach(function(a) {
       $('#projectArea').append(a.toHtml());
       $('article p').hide();
-      console.log('initindexran');
     });
-    projectView.handleArticle();
+    // projectView.handleArticle();
     projectView.handleDateFilter();
     projectView.handleCatFilter();
     projectView.populateFilters();

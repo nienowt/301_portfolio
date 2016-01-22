@@ -1,7 +1,7 @@
 (function(module){
   var articleController = {};
   Project.fetchAll(projectView.initIndex);
-  
+
   articleController.index = function(){
     $('article').show();
     $('article p').hide();
@@ -33,6 +33,7 @@
 })(window);
 
 
+
 (function(module){
   var resumeController = {};
 
@@ -42,6 +43,7 @@
   };
   module.resumeController = resumeController;
 })(window);
+
 
 
 (function(module){

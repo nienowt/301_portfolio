@@ -18,19 +18,6 @@
     });
   };
 
-  // projectView.handleCatFilter = function () {
-  //   $('#projectCategory').on('change', function(){
-  //     if ($(this).val()) {
-  //       $('article').hide();
-  //       var category = this.value;
-  //       $('article').filter('[data-category = "'+category+'"]').show();
-  //     } else {
-  //       $('article').not('template').show();
-  //     }
-  //     $('#projectYear').val('');
-  //   });
-  // };
-
   projectView.handleFilter = function (){
     $('#filters').on('change','select',function(){
       if($(this).val()) {
@@ -45,26 +32,11 @@
     });
   };
 
-  // projectView.handleDateFilter = function () {
-  //   $('#projectYear').on('change', function(){
-  //     if ($(this).val()) {
-  //       $('article').hide();
-  //       var year = this.value;
-  //       $('article').filter('[data-year = "'+year+'"]').show();
-  //     } else {
-  //       $('article').not('template').show();
-  //     }
-  //     $('#projectCategory').val('');
-  //   });
-  // };
-
   projectView.initIndex = function() {
     Project.all.forEach(function(a) {
       $('#projectArea').append(a.toHtml());
       $('article p').hide();
     });
-    // projectView.handleDateFilter();
-    // projectView.handleCatFilter();
     projectView.handleFilter();
     projectView.populateFilters();
     projectView.initClientFacts();

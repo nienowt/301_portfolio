@@ -35,7 +35,7 @@
     });
   };
 
-  Project.fetchAll = function(a){
+  Project.fetchAll = function(callback){
     if(localStorage.projectData){
       $.ajax({
         type: 'HEAD',
@@ -48,12 +48,12 @@
           } else {
             Project.loadAll(JSON.parse(localStorage.projectData));
           }
-          a();
+          callback();
         }
       });
     } else {
       Project.getAll();
-      a();
+      callback();
     }
   };
 
